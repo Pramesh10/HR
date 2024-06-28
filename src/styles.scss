@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    margin: 0;
+}
+
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+    color: fieldtext !important;
+}

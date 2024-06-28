@@ -1,0 +1,302 @@
+.login-component {
+  height: 100vh;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  background: #8a9aae;
+}
+
+#app {
+  width: 50vh;
+  height: 90vh;
+  margin-right: 325px;
+  padding: 6vh;
+  background: white;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+}
+
+.app-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.app-header {
+  padding: 6vh;
+}
+
+.app-header,
+.app-header > * {
+  font-size: 4.8vh;
+  margin: 0;
+  font-weight: 300;
+}
+
+.app-header > h1 {
+  font-size: 4.8vh;
+  font-weight: 400;
+  margin-bottom: 4.8vh;
+}
+
+.app-header > h2 {
+  font-size: 3vh;
+}
+
+.app-subheading {
+  font-size: 1vh;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.app-register {
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+  line-height: 10vh;
+  padding: 0 6vh;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.app-register > a {
+  font-weight: 400;
+}
+
+input {
+  font-size: 2.5vh;
+  width: calc(100% - 13vh);
+  height: 7.5vh;
+  margin-bottom: 2vh;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 6.5vh;
+  z-index: 2;
+  border: none;
+  box-shadow: inset 0 -0.5vh rgba(0, 0, 0, 0.1);
+}
+
+label {
+  top: calc(62% - 44.5vh);
+  left: 40px;
+  margin-top: 82px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: inset 0 -0.5vh transparent;
+}
+
+input[type="text"] {
+  top: 62%;
+}
+
+input[type="password"] {
+  top: calc(62% + 7.5vh);
+}
+
+input[type="checkbox"] {
+  height: auto;
+  box-shadow: none;
+  left: 0;
+  position: relative;
+  font-size: 1vh;
+  width: auto;
+
+}
+
+
+
+input[type="password"]:focus ~ * .st0,
+input[type="password"]:valid ~ * .st0,
+.app-button:focus ~ * .st0 {
+  stroke-dasharray: 210, 900;
+  stroke-dashoffset: -305;
+}
+
+input[type="text"]:focus {
+  input {
+    box-shadow: inset 0 -0.5vh rgba(0, 0, 0, 0.1);
+  }
+}
+
+input:not(:valid) ~ .app-button {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.app-button {
+  text-decoration: none;
+  color: #0f9ede;
+  font-size: 4.8vh;
+  padding: 0 6vh;
+  position: absolute;
+  bottom: 5vh;
+  font-weight: 400;
+  margin-left: 17px;
+  margin-top: 17px;
+  background-color: white;
+  border: none;
+}
+
+.app-button:focus {
+  outline: none;
+}
+
+@keyframes button-press {
+  from,
+  20% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0.4;
+  }
+
+  40%,
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  from,
+  to {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.app-view:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.app-view:nth-child(2) > .app-header {
+  font-size: 1rem;
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4vh;
+  padding-bottom: 1rem;
+}
+
+.app-view:nth-child(2) > .app-header > h2 {
+  transform: translateY(1rem);
+}
+
+.app-view:nth-child(2) > .app-header > h2 > em {
+  color: #0f9ede;
+  font-style: normal;
+}
+
+.app-view:nth-child(2) > .app-header > h2 {
+  transition-duration: 0.9s;
+  opacity: 0;
+}
+
+.meta {
+  margin-left: 50px;
+}
+
+.meta > * {
+  transition: none !important;
+}
+
+.meta > h1 {
+  font-weight: 300;
+  font-size: 32px;
+  color: white;
+}
+
+.meta > p {
+  line-height: 1.3;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.meta a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.meta a:hover {
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .meta {
+    display: none;
+  }
+
+  #app {
+    height: 100vh;
+    margin-right: 0px;
+    box-shadow: none;
+  }
+  .right-panel {
+    width: 100%;
+    height: 100%;
+  }
+  .login-component {
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    height: 100vh;
+  }
+
+  label {
+    top: calc(62% - 37.5vh);
+    left: 60px;
+    margin-top: 88px;
+  }
+}
+
+@media (max-width: 900px) {
+  label {
+    top: calc(62% - 46.5vh);
+    left: 37px;
+  }
+}
+@media (max-width: 300px) {
+  .login-component {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 280px) {
+  .login-component {
+    flex-direction: row-reverse;
+    margin-left : 20px
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+form{
+  position: revert;
+}
