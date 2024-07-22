@@ -8,4 +8,11 @@ export const routes: Routes = [
         (m) => m.AuthLayoutModule
       ),
   },
+  {
+    path: 'companyName',
+    loadChildren: () =>
+      import('./layouts/app-main-layout/main-layout/main-layout-routing.module').then(
+        (m) => m.MainLayoutRoutingModule
+      ),
+  },
 ];

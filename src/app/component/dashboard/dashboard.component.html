@@ -1,0 +1,160 @@
+<div class="main-content p-2">
+  <div class="row">
+    <div class="col-12 col-xl-4 col-sm-12 col-md-4 mt-2">
+      <app-checkin-checkout></app-checkin-checkout>
+    </div>
+    <div class="col-12 col-xl-4 col-sm-12 col-md-4 mt-2">
+      <div class="card">
+        <p-chart
+          width="200"
+          height="140"
+          type="doughnut"
+          [data]="data"
+          [options]="options"
+        />
+      </div>
+    </div>
+    <div class="col-12 col-xl-4 col-sm-6 col-md-4 mt-2">
+      <div class="card barchat">
+        <p-chart
+          type="bar"
+          height="140"
+          [data]="basicData"
+          [options]="basicOptions"
+        ></p-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <div class="main-card-slider">
+      <div class="row">
+        <div class="col-3 col-sm-12 col-lg-2 text-light p-2 card-slider-left">
+          You have 3 new pending approvals
+        </div>
+        <div class="col-9 col-sm-12 col-lg-10 card-slider-right">
+          <swiper-container #swiperContainer style="z-index: 2">
+            <swiper-slide>
+              <a class="data-card">
+                <div class="card-head-section-icon">
+                  <i
+                    class="ri-input-method-line card-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <h5>2700</h5>
+                </div>
+                <h4>Attendance</h4>
+                <span class="link-text"> View All Approvals </span>
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="data-card">
+                <div class="card-head-section-icon">
+                  <i
+                    class="ri-logout-box-r-line card-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <h5>2700</h5>
+                </div>
+                <h4>Leave</h4>
+                <span class="link-text"> View All Approvals </span>
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="data-card">
+                <div class="card-head-section-icon">
+                  <i
+                    class="ri-logout-box-r-line card-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <h5>2700</h5>
+                </div>
+                <h4>Resignation</h4>
+                <span class="link-text"> View All Approvals </span>
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="data-card">
+                <div class="card-head-section-icon">
+                  <i
+                    class="ri-input-method-line card-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <h5>2700</h5>
+                </div>
+                <h4>Attendance</h4>
+                <span class="link-text"> View All Approvals </span>
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="data-card">
+                <div class="card-head-section-icon">
+                  <i
+                    class="ri-input-method-line card-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <h5>2700</h5>
+                </div>
+                <h4>Attendance</h4>
+                <span class="link-text"> View All Approvals </span>
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="data-card">
+                <div class="card-head-section-icon">
+                  <i
+                    class="ri-input-method-line card-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <h5>2700</h5>
+                </div>
+                <h4>Attendance</h4>
+                <span class="link-text"> View All Approvals </span>
+              </a>
+            </swiper-slide>
+            <!-- Add Pagination if needed -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <!-- Add Navigation if needed -->
+
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
+          </swiper-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-xl-6 col-sm-12  mt-2">
+      
+      <app-attendance-lists></app-attendance-lists>
+     
+    </div>
+  </div>
+</div>
+
+<div class="speed-dial">
+  <ul class="dials" [class.show]="showDials">
+    <li>
+      <a class="bg-twitter">
+        <span class="button-info">Add new Leave Request</span>
+        <span class="ri-logout-box-r-line"></span
+      ></a>
+    </li>
+    <li>
+      <a class="bg-facebook">
+        <span class="button-info">Add new Attendacne Request</span>
+        <span class="ri-input-method-line"></span
+      ></a>
+    </li>
+    <li>
+      <a class="bg-google-plus">
+        <span class="button-info">Add new Loan Request</span>
+        <span class="ri-home-line"></span>
+      </a>
+    </li>
+  </ul>
+  <a class="toggle bg-share" (click)="toggleDials()"
+    ><span class="ri-add-line"></span
+  ></a>
+</div>

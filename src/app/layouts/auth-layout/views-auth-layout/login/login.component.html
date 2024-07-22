@@ -46,13 +46,19 @@
     </div>
   </div>
 </div> -->
-
+<p-toast
+        [showTransformOptions]="'translateY(100%)'"
+        [showTransitionOptions]="'60ms'"
+        [hideTransitionOptions]="'10ms'"
+        [showTransformOptions]="'translateX(100%)'"
+      />
 <div class="container-fluid login-component">
   <div class="row">
     <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
       <div class="meta">
         <img
-          src="assests/login-page/login-illustration.png"
+          ngSrc="assests/login-page/login-illustration.png"
+          width="360"
           height="360"
           style="margin-left: 108px"
           alt="asdf"
@@ -76,7 +82,8 @@
             </h1>
             <div class="company-logo">
               <img
-                src="assests\login-page\login-illustration.png"
+                ngSrc="assests\login-page\login-illustration.png"
+                width="120"
                 height="100"
                 alt="asdf"
                 style="margin-left: 67px"

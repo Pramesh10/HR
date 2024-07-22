@@ -1,0 +1,142 @@
+$company-color: rgb(69, 108, 108);
+
+.main-content {
+  --bs-gutter-x: 0;
+}
+
+.img-account-profile {
+  height: 10rem;
+}
+.rounded-circle {
+  border-radius: 50% !important;
+}
+// .card {
+//   box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+// }
+.card .card-header {
+  font-weight: 500;
+}
+.card-header:first-child {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+.card-header {
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  background-color: $company-color;
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.5);
+  color: #f7f8ff;
+}
+
+.btn-primary {
+  background-color: $company-color;
+  border: none;
+}
+
+.savechanges {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.nav-borders .nav-link.highlight {
+  color: rgb(69, 108, 108);
+  font-weight: 900;
+  border-bottom-color: rgb(69, 108, 108);
+}
+
+.nav-borders .nav-link {
+  color: #69707a;
+  font-size: small;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  transition: color 0.3s, border-bottom-color 0.5s;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 415px) {
+  .nav-borders .nav-link {
+    font-size: x-small;
+  }
+}
+
+///user details card
+///user details card
+///user details card
+///user details card
+.input-card  {
+  //   box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+  box-shadow: 0.5px 0.5px 1px 1px rgba(161, 159, 159, 0.3);
+  border-radius: 5px;
+  padding: 5px 0 0 10px;
+  background-color: #ffffff;
+}
+
+.document-card{
+  box-shadow: 0.5px 0.5px 1px 1px rgba(161, 159, 159, 0.3);
+  border-radius: 5px;
+  height: 2.5rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding : 20px 13px 5px 5px;
+}
+
+.document-card > i {
+  margin-top: -15px;
+  font-size: x-large;
+cursor: pointer;
+
+}
+
+
+
+.input-card h6 {
+  color: grey;
+  margin: 0;
+}
+
+.input-card p {
+  color: rgb(48, 48, 48);
+  font-size: medium;
+  margin: 0;
+}
+
+
+.leave-details {
+  display: flex;
+  width: 100%;
+}
+
+.leave-name {
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+}
+
+.leave-value {
+  width: 45%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.seprator {
+  width: 10%;
+}
+
+.form-label-inpu{
+  color: #69707a;
+}
+
+.nav-link-icon{
+align-self: center;
+color :$company-color;
+}
+
