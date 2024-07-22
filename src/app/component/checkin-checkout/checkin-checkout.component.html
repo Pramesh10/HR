@@ -1,0 +1,77 @@
+
+<p-toast
+        [showTransformOptions]="'translateY(100%)'"
+        [showTransitionOptions]="'60ms'"
+        [hideTransitionOptions]="'10ms'"
+        [showTransformOptions]="'translateX(100%)'"
+      />
+      <!-- <p-toast 
+            position="bottom-center"
+            [showTransformOptions]="'translateY(100%)'" 
+            [showTransitionOptions]="'600ms'" 
+            [hideTransitionOptions]="'100ms'" 
+            [showTransformOptions]="'translateX(100%)'" /> -->
+
+      <div
+        *ngIf="isCheckedIn && !isFetchingAttendance && !errorFetchingAttendance"
+        class="card checkin-card"
+      >
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ headerMessage }} <i class="ri-time-line mx-2"></i>
+          </h5>
+          <button
+            class="btn card-btn"
+            (click)="clockOut()"
+            [disabled]="todayCheckOutDateTime !== '--:--:--'"
+            [class.disabled]="todayCheckOutDateTime !== '--:--:--'"
+          >
+            {{ clockBtnText }}
+          </button>
+          <div class="container position-relative">
+            <div class="row d-flex align-items-center">
+              <div class="col">
+                <p class="card-text mt-3 checkin-time-text">
+                  {{ todayCheckInDateTime }}
+                </p>
+              </div>
+              <div class="col position-relative">
+                <div class="vl"></div>
+              </div>
+              <div class="col">
+                <p class="card-text checkout-time-text mt-3">
+                  {{ todayCheckOutDateTime }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="
+          !isCheckedIn && !isFetchingAttendance && !errorFetchingAttendance
+        "
+        class="card checkout-card"
+      >
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ headerMessage }} <i class="ri-time-line mx-2"></i>
+          </h5>
+          <button class="btn card-btn" (click)="clockIn()">
+            {{ clockBtnText }}
+          </button>
+          <p class="card-text mt-3">Check In to work.</p>
+        </div>
+      </div>
+
+      <div class="card attendance-error-card" *ngIf="errorFetchingAttendance">
+        <div class="text-center">
+          <i class="ri-error-warning-fill"></i>
+          <p>Problem connecting to server.</p>
+          <p>Please contact system admin</p>
+        </div>
+      </div>
+      <!-- <div class="card skeleton" *ngIf="isFetchingAttendance"></div> -->
+      <div class="card loader-card" *ngIf="isFetchingAttendance">
+        <div class="loader"></div>
+      </div>

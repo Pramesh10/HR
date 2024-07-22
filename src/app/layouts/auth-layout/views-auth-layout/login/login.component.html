@@ -1,0 +1,126 @@
+<!-- <div class="login-component">
+  <div class="meta">
+    <img
+      src="assests/login-page/login-illustration.png"
+      height="360"
+      style="margin-left: 108px"
+      alt="asdf"
+    />
+    <h1>ABCD EFG HIJ KLM NOP</h1>
+    <p>Pramesh K.C.<br /></p>
+    <p>
+      K cha sabai thik cha ni haina ?????????????
+      <strong>Login</strong> garum na ta aba .
+    </p>
+    <p>Login garnus</p>
+  </div>
+  <div id="app">
+    <div class="app-view">
+      <header class="app-header">
+        <h1>Company<span class="name" style="color: cadetblue">NAME</span></h1>
+        <div class="company-logo">
+          <img
+            src="assests\login-page\login-illustration.png"
+            height="100"
+            alt="asdf"
+            style="margin-left: 67px"
+          />
+        </div>
+        Welcome back,<br />
+
+        <span class="app-subheading">
+          sign in to continue<br />
+          to your Journey.
+        </span>
+      </header>
+      <input
+        type="email"
+        required
+        pattern=".*\.\w{2,}"
+        placeholder="Email UserName"
+      />
+      <input type="password" required placeholder="Password" />
+      <a href="#welcome" class="app-button">Login</a>
+      <div class="app-register">Don't have an account? <a>Sign Up</a></div>
+    
+    </div>
+  </div>
+</div> -->
+<p-toast
+        [showTransformOptions]="'translateY(100%)'"
+        [showTransitionOptions]="'60ms'"
+        [hideTransitionOptions]="'10ms'"
+        [showTransformOptions]="'translateX(100%)'"
+      />
+<div class="container-fluid login-component">
+  <div class="row">
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+      <div class="meta">
+        <img
+          ngSrc="assests/login-page/login-illustration.png"
+          width="360"
+          height="360"
+          style="margin-left: 108px"
+          alt="asdf"
+        />
+        <h1>ABCD EFG HIJ KLM NOP</h1>
+        <p>Pramesh K.C.<br /></p>
+        <p>
+          K cha sabai thik cha ni haina ?????????????
+          <strong>Login</strong> garum na ta aba .
+        </p>
+        <p>Login garnus</p>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 right-panel">
+      <div id="app">
+        <div class="app-view">
+          <header class="app-header">
+            <h1>
+              Company<span class="name" style="color: cadetblue">NAME</span>
+            </h1>
+            <div class="company-logo">
+              <img
+                ngSrc="assests\login-page\login-illustration.png"
+                width="120"
+                height="100"
+                alt="asdf"
+                style="margin-left: 67px"
+              />
+            </div>
+            Welcome back,<br />
+
+            <span class="app-subheading"> sign in to continue.<br /> </span>
+          </header>
+          <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
+            <input
+              type="text"
+              required
+              name="username"
+              [(ngModel)]="loginModel.username"
+              placeholder="Enter UserName"
+            />
+            <input
+              type="password"
+              required
+              name="password"
+              minlength="6"
+              maxlength="20"
+              [(ngModel)]="loginModel.password"
+              placeholder="Password"
+            />
+
+            <label>
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </label>
+
+            <!-- <a class="app-button">Login</a> -->
+            <button type="submit" class="app-button">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

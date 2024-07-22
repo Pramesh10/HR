@@ -1,0 +1,319 @@
+<div
+  class="sidebar position-fixed top-0 bottom-0 nav-side-bg border-end"
+  [ngClass]="{ collapsed: isCollapsed }"
+  (mouseleave)="collapseSidebarOnMouseLeave()"
+>
+  <div class="d-flex align-items-center p-3">
+    <a
+      class="sidebar-logo text-uppercase fw-bold text-decoration-none text-black fs-4"
+      >Company</a
+    >
+    <i
+      class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"
+      (click)="toggleSidebar()"
+    ></i>
+  </div>
+  <ul class="sidebar-menu p-3 m-0 mb-0">
+    <li class="sidebar-menu-item active" [routerLink]="['admin/dashboard']">
+      <a>
+        <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
+        Dashboard
+      </a>
+      <span class="sidebar-menu-name-down">Dashboard</span>
+    </li>
+
+    <li class="sidebar-menu-item" [routerLink]="['/calendar']">
+      <a>
+        <i class="ri-calendar-line sidebar-menu-item-icon"></i>
+        Calendar
+      </a>
+    </li>
+    <li class="sidebar-menu-item" [routerLink]="['/test']">
+      <a>
+        <i class="ri-calendar-line sidebar-menu-item-icon"></i>
+        Test Page
+      </a>
+    </li>
+    <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Custom</li>
+    <li
+      class="sidebar-menu-item has-dropdown"
+      [ngClass]="{ focused: dropdown1.isFocused }"
+    >
+      <a (click)="toggleDropdown(dropdown1)">
+        <i class="ri-pages-line sidebar-menu-item-icon"></i>
+        Pages
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu" *ngIf="dropdown1.isFocused">
+        <li class="sidebar-dropdown-menu-item">
+          <a [routerLink]="['admin/user-profile']"> User Profile </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a [routerLink]="['/salesinvoice/sales']"> Sales Invoice (F1) </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a [routerLink]="['/salesinvoice/tax']"> Tax Invoice (F2) </a>
+        </li>
+        <li
+          class="sidebar-dropdown-menu-item has-dropdown"
+          [ngClass]="{ focused: subdropdown1.isFocused }"
+        >
+          <a (click)="toggleSubDropdown(subdropdown1)">
+            PrimeNg Table
+            <i
+              class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"
+            ></i>
+          </a>
+          <ul class="sidebar-dropdown-menu" *ngIf="subdropdown1.isFocused">
+            <li class="sidebar-dropdown-menu-item">
+              <a [routerLink]="['/primengtable']"> Tables </a>
+            </li>
+            <!-- <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Post
+                            </a>
+                        </li> -->
+          </ul>
+        </li>
+        <!-- <li class="sidebar-dropdown-menu-item has-dropdown" [ngClass]="{'focused': subdropdown2.isFocused}">
+                    <a (click)="toggleSubDropdown(subdropdown2)" >
+                        Email Template
+                        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+                    </a>
+                    <ul class="sidebar-dropdown-menu" *ngIf="subdropdown2.isFocused">
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Reset Password
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Changed Password
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Verify Email
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Invitation
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Pricing
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        About Us
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Contact Us
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Our Team
+                    </a>
+                </li> -->
+      </ul>
+    </li>
+    <!-- <li class="sidebar-menu-item has-dropdown" [ngClass]="{'focused': dropdown2.isFocused}">
+            <a (click)="toggleDropdown(dropdown2)">
+                <i class="ri-user-line sidebar-menu-item-icon"></i>
+                Authentication
+                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+            </a>
+            <ul class="sidebar-dropdown-menu" *ngIf="dropdown2.isFocused">
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Login
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Registration
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Reset Password
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Change Password
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Confirm Password
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Deactivate Account
+                    </a>
+                </li>
+            </ul>
+        </li> -->
+    <!-- <li class="sidebar-menu-item has-dropdown">
+            <a >
+                <i class="ri-window-line sidebar-menu-item-icon"></i>
+                Widgets
+                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+            </a>
+            <ul class="sidebar-dropdown-menu">
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Charts
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Tables
+                    </a>
+                </li>
+            </ul>
+        </li> -->
+    <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase text-black">
+      Settings
+    </li>
+    <li class="sidebar-menu-item" [routerLink]="['/setup/number-series-list']">
+      <a>
+        <i class="ri-settings-6-line sidebar-menu-item-icon"></i>
+        Number Series
+      </a>
+    </li>
+    <!-- <li class="sidebar-menu-item has-dropdown">
+            <a >
+                <i class="ri-shopping-cart-2-line sidebar-menu-item-icon"></i>
+                Number Series Setup
+                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+            </a>
+            <ul class="sidebar-dropdown-menu">
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Shop
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Checkout
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Details
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Wishlist
+                    </a>
+                </li>
+            </ul>
+        </li> -->
+    <!-- <li class="sidebar-menu-item">
+            <a >
+                <i class="ri-mail-line sidebar-menu-item-icon"></i>
+                Email
+            </a>
+        </li>
+        <li class="sidebar-menu-item">
+            <a >
+                <i class="ri-calendar-line sidebar-menu-item-icon"></i>
+                Calendar
+            </a>
+        </li> -->
+  </ul>
+</div>
+<div class="sidebar-overlay" (click)="collapseSidebar()"></div>
+
+<!-- end: Sidebar -->
+<!-- end: Sidebar -->
+<!-- end: Sidebar -->
+<!-- end: Sidebar -->
+<!-- start: Main -->
+<!-- start: Main -->
+<!-- start: Main -->
+<!-- start: Main -->
+<main class="content-main">
+  <div class="p-2">
+    <!-- start: Navbar -->
+    <nav class="px-3 py-2 nav-upper-bg rounded shadow-sm">
+      <i
+        class="ri-menu-line sidebar-toggle me-3 d-block d-md-none"
+        (click)="toggleSidebar()"
+      ></i>
+      <h5 class="fw-bold mb-0 me-auto"></h5>
+
+      <div class="dropdown">
+        <div
+          class="d-flex align-items-center cursor-pointer dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <span class="me-2 d-none d-sm-block">Pramesh K.C.</span>
+          <img
+            class="navbar-profile-image"
+            src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="Image"
+          />
+        </div>
+        <ul
+          class="dropdown-menu user-dropdown-list"
+          aria-labelledby="dropdownMenuButton1"
+        >
+          <li><a class="dropdown-item">Hello Username</a></li>
+          <li><a class="dropdown-item">Change Password</a></li>
+          <li><a class="dropdown-item">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end: Navbar -->
+
+    <!-- start: Content -->
+    <div class="py-2 router-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- end: Content -->
+  </div>
+</main>
+
+<div class="mobile-footer">
+  <div class="row">
+    <div class="col dashboard" [routerLink]="['/dashboard']">
+      <div class="icon-wrapper">
+        <i class="ri-home-line" aria-hidden="true"></i>
+      </div>
+      <div class="icon-name">HOME</div>
+    </div>
+    <div class="col leave" [routerLink]="['/leaves/new']">
+      <div class="icon-wrapper">
+        <i class="ri-logout-box-r-line" aria-hidden="true"></i>
+      </div>
+      <div class="icon-name">LEAVE</div>
+    </div>
+    <div class="col attendance" [routerLink]="['/present-days-detail']">
+      <div class="icon-wrapper">
+        <i class="ri-input-method-line" aria-hidden="true"></i>
+      </div>
+      <div class="icon-name">ATTENDANCE</div>
+    </div>
+    <div class="col profile" [routerLink]="['admin/user-profile']">
+      <div class="icon-wrapper">
+        <i class="ri-user-line" aria-hidden="true"></i>
+      </div>
+      <div class="icon-name">PROFILE</div>
+    </div>
+  </div>
+</div>

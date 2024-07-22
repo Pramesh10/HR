@@ -1,0 +1,277 @@
+<div class="container-fluid p-2">
+  <div class="row">
+    <div class="col-xl-8">
+      <!-- Account details card-->
+      <div class="mb-4">
+        <nav class="nav nav-borders mt-1">
+          <i class="ri-user-line nav-link-icon"></i>
+          <a
+            class="nav-link"
+            (click)="changeLink('Profile')"
+            [ngClass]="{ highlight: currentStatus === 'Profile' }"
+            >Profile</a
+          >
+          <div class="vr m-2"></div>
+          <i class="ri-article-line nav-link-icon"></i>
+
+          <a
+            class="nav-link"
+            (click)="changeLink('Document')"
+            [ngClass]="{ highlight: currentStatus === 'Document' }"
+            >Documents</a
+          >
+          <div class="vr m-2"></div>
+          <i class="ri-lock-line nav-link-icon"></i>
+
+          <a
+            class="nav-link"
+            (click)="changeLink('Security')"
+            [ngClass]="{ highlight: currentStatus === 'Security' }"
+            >Security</a
+          >
+        </nav>
+        <hr class="mt-0 mb-2" />
+        @if (currentStatus == 'Profile'){
+        <div class="card-body">
+          <!--General Parts-->
+          <div class="card-header">Personal Data</div>
+          <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Full Name</h6>
+                <p>Pramesh Kumar K.C.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Permanent Address</h6>
+                <p>Mahalaxmi</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Correspondence Address</h6>
+                <p>Mahalaxmi</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>DOB Actual (AD)</h6>
+                <p>2023/45/23</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>DOB Citizenship (AD)</h6>
+                <p>2023/45/23</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Citizenship Number</h6>
+                <p>1213141234</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Blood Group</h6>
+                <p>A+</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Gender</h6>
+                <p>Male</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Marital Status</h6>
+                <p>Unmarried</p>
+              </div>
+            </div>
+          </div>
+          <!--Communication Parts-->
+          <div class="card-header mt-1">Contact</div>
+          <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Phone Number</h6>
+                <p>121212121212</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Mobile Number</h6>
+                <p>121212121212</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Personal Email</h6>
+                <p>qwegmail.com</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="input-card mt-1">
+                <h6>Office Email</h6>
+                <p>hekajigmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        } @if (currentStatus == 'Security'){
+        <div class="card-body">
+          <form>
+            <!-- Form Group (currentpassword)-->
+            <div class="mb-3">
+              <label class="small mb-1">Current Password</label>
+              <input
+                class="form-control"
+                type="text"
+                disabled
+                placeholder="Current Password"
+              />
+            </div>
+            <!-- Form Group (currentpassword)-->
+            <div class="mb-3">
+              <label class="small mb-1 form-label-inpu">New Password</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="New Password"
+              />
+            </div>
+            <!-- Form Group (currentpassword)-->
+            <div class="mb-3">
+              <label class="small mb-1">Confirm Password</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Confirm Password"
+              />
+            </div>
+
+            <!-- Save changes button-->
+            <div class="savechanges flex-end">
+              <button class="btn btn-primary" type="button">
+                Save changes
+              </button>
+            </div>
+          </form>
+        </div>
+        } @if(currentStatus == 'Document'){
+        <div class="card-body">
+          <!-- <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th>Birth Certificate</th>
+                  <td></td>
+                  <td></td>
+                  <td><i class="ri-download-2-line"></i></td>
+                </tr>
+                <tr>
+                  <th>Citizenship Certificate</th>
+                  <td></td>
+                  <td></td>
+                  <td><i class="ri-download-2-line"></i></td>
+                </tr>
+                <tr>
+                  <th>Passport</th>
+                  <td></td>
+                  <td></td>
+                  <td><i class="ri-download-2-line"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div> -->
+          <div class="document-card mt-1">
+            <p>Birth Certificate</p>
+            <i class="ri-download-2-line"></i>
+          </div>
+          <div class="document-card mt-1">
+            <p>Passport</p>
+            <i class="ri-download-2-line"></i>
+          </div>
+          <div class="document-card mt-1">
+            <p>Citizenship Certificate</p>
+            <i class="ri-download-2-line"></i>
+          </div>
+          <div class="document-card mt-1">
+            <p>National Certificate</p>
+            <i class="ri-download-2-line"></i>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <!-- Profile picture card-->
+      <div class="card mb-4 mb-xl-0">
+        <div class="card-header text-center">Profile Picture</div>
+        <div class="card-body text-center">
+          <!-- Profile picture image-->
+          <img
+            class="img-account-profile rounded-circle mb-2"
+            src="http://bootdey.com/img/Content/avatar/avatar1.png"
+            alt=""
+          />
+          <!-- Profile picture help block-->
+          <div class="small font-italic text-muted mb-4">Name</div>
+          <div class="small font-italic text-muted mb-4">Designation</div>
+          <!-- Profile picture upload button-->
+          <button class="btn btn-primary" type="button">
+            Upload new image
+          </button>
+        </div>
+      </div>
+      <!-- Leave Details card-->
+      <div class="card mt-2 mb-xl-0">
+        <div class="card-header text-center">Leave Details</div>
+        <div class="card-body text-center">
+          <div class="row">
+            <div class="col-12">
+              <div class="leave-details mt-1">
+                <div class="leave-name">
+                  <h6>Casual Leave</h6>
+                </div>
+                <div class="separator">:</div>
+                <div class="leave-value">
+                  <h6>23</h6>
+                </div>
+              </div>
+              <div class="leave-details mt-1">
+                <div class="leave-name">
+                  <h6>Sick Leave</h6>
+                </div>
+                <div class="separator">:</div>
+                <div class="leave-value">
+                  <h6>23</h6>
+                </div>
+              </div>
+              <div class="leave-details mt-1">
+                <div class="leave-name">
+                  <h6>Festival Leave</h6>
+                </div>
+                <div class="separator">:</div>
+                <div class="leave-value">
+                  <h6>23</h6>
+                </div>
+              </div>
+              <div class="leave-details mt-1">
+                <div class="leave-name">
+                  <h6>Substitute Leave</h6>
+                </div>
+                <div class="separator">:</div>
+                <div class="leave-value">
+                  <h6>23</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

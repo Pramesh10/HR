@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+}
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(
+    rgb(232, 240, 254),
+    rgba(70, 90, 126, 0.4)
+  ) !important;
+  color: fieldtext !important;
+}
+
+@media (min-width: 768px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* Ensure toast messages can display multiple lines */
+.p-toast-message {
+  white-space: pre-line; /* Preserves white space and allows for multiple lines */
+}
+
+/* Handle overflow */
+.p-toast-message-content {
+  overflow: auto; /* Adds scrollbars if content overflows */
+  max-height: 200px; /* Set a max height to keep the toast within a reasonable size */
+  /* Optional: to hide the scrollbar for WebKit browsers */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
+/* Custom styles for PrimeNG toast messages */
+.custom-toast .p-toast-message {
+    background-color: #090203; /* Example: Light red background */
+    color: #721c24;            /* Example: Dark red text */
+  }
+  
+  .custom-toast .p-toast-message .p-toast-summary {
+    font-weight: bold;
+  }
+  
+  .custom-toast .p-toast-message .p-toast-detail {
+    font-size: 14px;
+  }
+  
+  /* Additional customization for the close button */
+  .custom-toast .p-toast-message .p-toast-icon-close {
+    color: #721c24; /* Example: Dark red color for the close icon */
+  }
+

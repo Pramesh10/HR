@@ -1,0 +1,390 @@
+$company-color: rgb(59, 93, 93);
+
+// .main-content {
+//   background-color: rgb(255, 255, 255);
+// }
+.card {
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+  min-height: 150px;
+}
+
+.attendance-error-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: smaller;
+  font-weight: bold;
+
+  background-color: #fff4f4;
+  box-shadow: inset 6px 0 #aa3f3f;
+}
+
+.attendance-error-card p {
+  color: gray;
+}
+
+.ri-error-warning-fill {
+  font-size: x-large;
+}
+
+.card-title,
+.card-btn,
+.card-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ri-time-line {
+  color: #198754;
+  font-weight: 900;
+}
+
+.card-btn {
+  background-color: $company-color;
+  color: whitesmoke;
+  width: 100%;
+}
+
+.vl {
+  border-left: 2px solid black;
+  height: 20px; /* Adjust the height as needed */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.position-relative {
+  position: relative;
+}
+
+.checkin-time-text {
+  font-size: 14px;
+  color: #198754;
+  text-decoration: underline;
+}
+.checkout-time-text {
+  font-size: 14px;
+  color: rgb(132, 31, 31);
+  text-decoration: underline;
+}
+
+.btn.disabled {
+  background-color: $company-color;
+  pointer-events: none;
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+//speedial css
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pop-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.speed-dial {
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  z-index: 1000;
+  text-align: center;
+  display: inline-block;
+}
+
+.speed-dial a,
+.speed-dial .toggle:hover,
+.speed-dial a:active,
+.speed-dial a:visited,
+.speed-dial a:focus {
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.speed-dial .toggle {
+  display: inline-block;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 37px;
+  line-height: 45px;
+  margin: 8px 0;
+}
+
+.speed-dial .dials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.speed-dial .dials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 28px;
+  margin: 8px 0;
+  transform: scale(0);
+  animation: pop-out 0.3s ease both;
+  position: relative;
+  transition: width 0.3s;
+}
+
+.speed-dial .dials a .button-info {
+  position: absolute;
+  right: 50px;
+  background: rgb(255, 247, 247);
+  color: black;
+  padding:5px;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.75rem;
+}
+
+.speed-dial .dials.show a {
+  animation: pop-in 0.3s ease both;
+  transform: scale(1);
+}
+
+.bg-share {
+  background-color: #15b897;
+}
+
+.bg-twitter {
+  background-color: #2daae2;
+}
+
+.bg-facebook {
+  background-color: #3c5b9b;
+}
+
+.bg-google-plus {
+  background-color: #f73e29;
+}
+
+/* Add incremental delays so that the buttons pop in order, supports up to 6 links */
+.speed-dial .dials li:nth-child(1) a {
+  animation-delay: 0.6s;
+}
+
+.speed-dial .dials li:nth-child(2) a {
+  animation-delay: 0.5s;
+}
+
+.speed-dial .dials li:nth-child(3) a {
+  animation-delay: 0.4s;
+}
+
+.speed-dial .dials li:nth-child(4) a {
+  animation-delay: 0.3s;
+}
+
+.speed-dial .dials li:nth-child(5) a {
+  animation-delay: 0.2s;
+}
+
+.speed-dial .dials li:nth-child(6) a {
+  animation-delay: 0.1s;
+}
+
+/////main approval card design
+/////main approval card design
+/////main approval card design
+
+.card-slider-left {
+  display: flex;
+  align-items: center;
+}
+.main-card-slider {
+  border-radius: 25px;
+
+  padding-left: 20px;
+  background: linear-gradient(to right, rgb(15, 52, 67), rgb(51, 154, 111));
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  /* Optional: to hide the scrollbar for WebKit browsers */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
+.data-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 0.5em;
+  text-decoration: none;
+  background: white;
+  margin: 1em;
+  padding: 2.75em 2.5em;
+  box-shadow: 0 1.5em 2.5em -0.5em rgba(#000000, 0.1);
+  transition: transform 0.45s ease, background 0.45s ease;
+
+  .card-icon {
+    float: right;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1;
+    color: rgb(61, 149, 203);
+  }
+  h5 {
+    color: #2e3c40;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: 0.5em;
+    margin: 0 0 0.142857143em;
+    border-bottom: 2px solid #000000;
+    transition: color 0.45s ease, border 0.45s ease;
+  }
+
+  h4 {
+    color: #627084;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin: 0 0 1.777777778em;
+    transition: color 0.45s ease;
+  }
+
+  .link-text {
+    display: block;
+    color: #45a76b;
+    font-size: 0.75em;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: auto 0 0;
+    transition: color 0.45s ease;
+
+    svg {
+      margin-left: 0.5em;
+      transition: transform 0.6s ease;
+
+      path {
+        transition: fill 0.45s ease;
+      }
+    }
+  }
+
+  &:hover {
+    background: #65a98c;
+    transform: scale(1.02);
+    cursor: pointer;
+
+    h5 {
+      color: #ffffff;
+      border-bottom-color: #142b68;
+    }
+
+    h4 {
+      color: #ffffff;
+    }
+
+    .link-text {
+      color: #ffffff;
+    }
+  }
+
+  @keyframes point {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(0.125em);
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .speed-dial {
+    right: 5px;
+    bottom: 52px;
+  }
+
+  .card-slider-left {
+    display: none;
+  }
+
+  .card-slider-right {
+    width: 100%;
+  }
+}
+
+/* Skeleton loading animation */
+// THE LOADING EFFECT
+.skeleton {
+  background-color: #fbfbfb;
+  box-shadow: none;
+  // The shine that's going to move across the skeleton:
+  background-image: linear-gradient(
+    90deg,
+    rgba(#fff, 0),
+    rgba(#fff, 0.5),
+    rgba(#fff, 0)
+  );
+  background-size: 40px 100%; // width of the shine
+  background-repeat: no-repeat; // No need to repeat the shine effect
+  background-position: left -40px top 0; // Place shine on the left side, with offset on the left based on the width of the shine - see background-size
+  animation: shine 1s ease infinite; // increase animation time to see effect in 'slow-mo'
+}
+
+@keyframes shine {
+  to {
+    // Move shine from left to right, with offset on the right based on the width of the shine - see background-size
+    background-position: right -40px top 0;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 28px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #60b99a;
+  animation: l2 1.5s infinite;
+}
+@keyframes l2 {
+  0%,
+  100% {
+    transform: translate(-35px);
+    box-shadow: 0 0 #f77825, 0 0 #554236;
+  }
+  40% {
+    transform: translate(35px);
+    box-shadow: -15px 0 #f77825, -30px 0#554236;
+  }
+  50% {
+    transform: translate(35px);
+    box-shadow: 0 0 #f77825, 0 0 #554236;
+  }
+  90% {
+    transform: translate(-35px);
+    box-shadow: 15px 0 #f77825, 30px 0 #554236;
+  }
+}
+
+.loader-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

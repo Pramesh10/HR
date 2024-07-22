@@ -1,0 +1,24 @@
+<div class="card card-body">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Check IN</th>
+          <th scope="col">Check Out</th>
+          <th scope="col">Chech In Add.</th>
+          <th scope="col">Chech Out Add.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendance of attendanceDetailsList.slice(0,5)">
+          <td>{{ attendance.date | date:'y-M-d' }}</td>
+          <td>{{ attendance.clientDateTimeCheckIn | date:'h:mm a'}}</td>
+          <td>{{ attendance.clientDateTimeCheckOut | date:'h:mm a' }}</td>
+          <td>{{ attendance.checkInAddress }}</td>
+          <td>{{ attendance.checkOutAddress }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
