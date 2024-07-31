@@ -39,6 +39,7 @@ export class LoginComponent {
     console.log('Oninit enter');
     this.getUserIp();
   }
+
   getUserIp() {
     this.userLoginServices.getIpAddress().subscribe(
       (data) => {
@@ -57,8 +58,11 @@ export class LoginComponent {
     this.submitted = true;
 
     if (signInForm.valid) {
-      if(this.loginModel.ipAddress === null || this.loginModel.ipAddress === undefined){
-        this.loginModel.ipAddress = '000.000.00.00'
+      if (
+        this.loginModel.ipAddress === null ||
+        this.loginModel.ipAddress === undefined
+      ) {
+        this.loginModel.ipAddress = '000.000.00.00';
       }
       this.userLoginServices.login(this.loginModel).subscribe((success) => {
         console.log(success);
